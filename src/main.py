@@ -1,4 +1,5 @@
 import bruteForceBezierCurve as bfbc
+import time 
 def main():
     # Mengambil input dari pengguna untuk titik kontrol
     num_control_points = int(input("Masukkan jumlah titik kontrol: "))
