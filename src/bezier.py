@@ -58,17 +58,23 @@ def bezier(control_points, curve_points, iterations):
 #                midpoint_bezier(new_points[len(new_points)//2-1:], iteration-1)[1:]
 
 def plot_midpoint_bezier(control_points, curve_points, iteration):
+    start_time = time.time()
     """ Plots the Bezier curve using the midpoint algorithm for a given set of control points and iterations. """
     bezier_points = bezier(control_points, curve_points, iteration)[1]
     control_points = bezier(control_points, curve_points, iteration)[0] + control_points
     # Extract x and y coordinates from points
     x_values, y_values = zip(*bezier_points)
     control_x, control_y = zip(*control_points)
+    
     plt.figure()
     plt.plot(x_values, y_values, 'b-', label='Bezier Curve')
-    plt.plot(control_x, control_y, 'ro--', label='Control Points')
+    plt.plot(control_x, control_y, 'ro--', label='Control Points', color='red', markersize=0.5)
     plt.title(f'Bezier Curve with {iteration} iterations')
+    end_time = time.time()
+    execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
+    print(f"Execution time: {execution_time:.2f} ms")
     plt.legend()
+    
     plt.show()
 
 def main():
@@ -80,13 +86,8 @@ def main():
         control_points.append((x, y))
     iterations = int(input("Enter the number of iterations: "))
 
-    start_time = time.time()
-    plot_midpoint_bezier(control_points, curve_points, iterations)
-    end_time = time.time()
 
-    # Print execution time
-    execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
-    print(f"Execution time: {execution_time:.2f} ms")
+    plot_midpoint_bezier(control_points, curve_points, iterations)
 
 if __name__ == "__main__":
     main()
