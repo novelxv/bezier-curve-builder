@@ -48,7 +48,7 @@ def bezier(control_points, all_points, iterations):
         # Recursively call the function for the next iteration
         return bezier(new_control_points, all_points, iterations - 1)
         
-def plot_midpoint_bezier(control_points, all_points, iterations):
+def plot_bezier_divide_and_conquer(control_points, all_points, iterations):
     """
     Plots and animates the Bezier curve using the given control points and iterations
     """
@@ -111,7 +111,7 @@ def plot_midpoint_bezier(control_points, all_points, iterations):
 
     end_time = time.time()
     execution_time = (end_time - start_time) * 1000 # Convert to milliseconds
-    print(f"Execution time: {execution_time:.2f} ms")
+    print(f"\nExecution time: {execution_time:.2f} ms")
 
     plt.show()
 
@@ -126,7 +126,10 @@ def main():
     iterations = int(input("Enter the number of iterations: "))
     all_points = [control_points]
 
-    plot_midpoint_bezier(control_points, all_points, iterations)
+    # Plot the Bezier curve
+    plot_bezier_divide_and_conquer(control_points, all_points, iterations)
+
+    print("\nGoodbye! Hope you enjoyed the bezier curve 💞")
 
 if __name__ == "__main__":
     main()
