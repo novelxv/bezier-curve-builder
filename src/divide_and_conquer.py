@@ -52,6 +52,8 @@ def plot_midpoint_bezier(control_points, all_points, iterations):
     """
     Plots and animates the Bezier curve using the given control points and iterations
     """
+    start_time = time.time()
+
     all_points = bezier(control_points, all_points, iterations) # all points to be animated
     total_frames = sum(len(group) for group in all_points) # total frames needed for the animation
 
@@ -60,10 +62,10 @@ def plot_midpoint_bezier(control_points, all_points, iterations):
     fig, ax = plt.subplots()
 
     # Adjust the xlim and ylim boundaries based on the available points for the best view
-    xlim_max = max([x for x, y in control_points]) + 2
-    xlim_min = min([x for x, y in control_points]) - 2
-    ylim_max = max([y for x, y in control_points]) + 2
-    ylim_min = min([y for x, y in control_points]) - 2
+    xlim_max = max([x for x, y in control_points]) + 1
+    xlim_min = min([x for x, y in control_points]) - 1
+    ylim_max = max([y for x, y in control_points]) + 1
+    ylim_min = min([y for x, y in control_points]) - 1
     ax.set_xlim(xlim_min, xlim_max)
     ax.set_ylim(ylim_min, ylim_max)
 
@@ -106,6 +108,10 @@ def plot_midpoint_bezier(control_points, all_points, iterations):
     ax.legend()
 
     plt.title(f'Bezier Curve with {iterations} iterations')
+
+    end_time = time.time()
+    execution_time = (end_time - start_time) * 1000 # Convert to milliseconds
+    print(f"Execution time: {execution_time:.2f} ms")
 
     plt.show()
 
