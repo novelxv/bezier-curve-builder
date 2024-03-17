@@ -33,6 +33,7 @@ python main.py
 Follow the instructions in the program to enter control points and the number of iterations.
 
 ## Program Display
+![](https://github.com/Tucil2_13522035_13522096/assets/format-masukan.gif)
 
 ## Author Information
 | Name                    | NIM      |
