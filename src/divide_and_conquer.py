@@ -74,7 +74,7 @@ def plot_bezier_divide_and_conquer(control_points, all_points, iterations):
     for i, _ in enumerate(all_points):
         line_style = 'o--' if i != len(all_points) - 1 else 'o-'
         color = colors[i % len(colors)]
-        label = 'Control Points' if i == 0 else 'Bezier Curve' if i == len(all_points) - 1 else None
+        label = 'Control Points & Bezier Curve' if i == 0 and len(all_points) - 1 == 0 else 'Bezier Curve' if i == len(all_points) - 1 else 'Control Points' if i == 0 else None
         line = ax.plot([], [], line_style, color=color, markersize=3, label=label)[0]
         lines.append(line)
     # Initialize the line objects
@@ -120,10 +120,16 @@ def main():
 
     control_points = []
     n = int(input("Enter the number of control points: "))
+    if n < 2:
+        print("At least 2 control points are required to form a Bezier curve.")
+        return
     for i in range(n):
         x, y = map(float, input(f"Enter the x and y coordinates of point {i + 1}: ").split())
         control_points.append((x, y))
     iterations = int(input("Enter the number of iterations: "))
+    if iterations < 0:
+        print("At least 0 iteration is required.")
+        return
     all_points = [control_points]
 
     # Plot the Bezier curve
