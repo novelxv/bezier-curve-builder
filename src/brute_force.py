@@ -54,9 +54,13 @@ def main():
     for i in range(n):
         x, y = map(float, input(f"Enter the x and y coordinates of point {i + 1}: ").split())
         control_points.append((x, y))
+    # Take input from the user for the number of iterations
+    iterations = int(input("\nEnter the number of iterations: "))
+    if iterations < 0:
+        print("At least 0 iteration is required.")
+        return
     
     # Plot the Bezier curve
-    iterations = int(input("Enter the number of iterations: "))
     plot_bezier_brute_force(control_points, iterations)
     
     print("\nGoodbye! Hope you enjoyed the bezier curve 💞")
