@@ -26,10 +26,10 @@ def main():
     print("2. Divide and Conquer")
     algorithm = int(input("Enter the number of the algorithm: "))
     
+    iterations = int(input("\nEnter the number of iterations: "))
     if algorithm == 1:
-        brute.plot_bezier_brute_force(control_points, num_points=1000)
+        brute.plot_bezier_brute_force(control_points, iterations)
     elif algorithm == 2:
-        iterations = int(input("\nEnter the number of iterations: "))
         if iterations < 0:
             print("At least 0 iteration is required.")
             return
