@@ -48,18 +48,20 @@ def bezier(control_points, all_points, iterations):
         # Recursively call the function for the next iteration
         return bezier(new_control_points, all_points, iterations - 1)
         
-def plot_bezier_divide_and_conquer(control_points, all_points, iterations):
+def plot_bezier_divide_and_conquer(control_points, iterations):
     """
     Plots and animates the Bezier curve using the given control points and iterations
     """
     start_time = time.time()
 
+    all_points = [control_points]
     all_points = bezier(control_points, all_points, iterations) # all points to be animated
     total_frames = sum(len(group) for group in all_points) # total frames needed for the animation
 
-    colors = ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow'] # colors for each group
+    colors = ['blue', '#FF007F', '#9400D3', '#FF69B4', '#00FFFF', '#FFFF33'] # colors for each group
 
-    fig, ax = plt.subplots()
+    with plt.style.context('dark_background'):
+        fig, ax = plt.subplots()
 
     # Adjust the xlim and ylim boundaries based on the available points for the best view
     xlim_max = max([x for x, y in control_points]) + 1
@@ -139,10 +141,9 @@ def main():
     if iterations < 0:
         print("At least 0 iteration is required.")
         return
-    all_points = [control_points]
 
     # Plot the Bezier curve
-    plot_bezier_divide_and_conquer(control_points, all_points, iterations)
+    plot_bezier_divide_and_conquer(control_points, iterations)
 
     print("\nGoodbye! Hope you enjoyed the bezier curve 💞")
 

@@ -21,13 +21,12 @@ def plot_bezier_brute_force(control_points, iterations):
     x_values, y_values = zip(*bezier_points)
     control_x, control_y = zip(*control_points)
 
-    plt.figure()
-    plt.plot(x_values, y_values, 'b-', label='Bezier Curve')
-    plt.plot(control_x, control_y, 'ro--', label='Control Points', color='green')
-    # bezier_x, bezier_y = zip(*bezier_points)
-    # plt.scatter(bezier_x, bezier_y, color='red', label='Bezier Points', s=0.5)
-    plt.title('Bezier Curve with Brute Force Algorithm')
-    plt.legend()
+    with plt.style.context('dark_background'):
+        plt.figure()
+        plt.plot(x_values, y_values, 'm-', label='Bezier Curve')
+        plt.plot(control_x, control_y, 'o--', color='cyan', label='Control Points')
+        plt.title('Bezier Curve with Brute Force Algorithm')
+        plt.legend()
 
     end_time = time.time()
     execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
