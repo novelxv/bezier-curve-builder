@@ -1,7 +1,16 @@
 import brute_force as brute
 import divide_and_conquer as dac
 
+def display_welcome_message():
+    print("================================================")
+    print("  Welcome to the Bézier Curve Animator ✨✨✨ ")
+    print("================================================")
+    print("\nThis program allows you to animate the formation of Bézier curves using either the Brute Force or Divide and Conquer method.")
+    print("\nPlease follow the prompts to input your control points and select the desired algorithm for the animation.")
+    print("\nLet's get started!\n")
+
 def main():
+    display_welcome_message()
     # Take input from the user for the control points
     control_points = []
     n = int(input("Enter the number of control points: "))

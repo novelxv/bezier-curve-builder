@@ -33,7 +33,16 @@ def plot_bezier_brute_force(control_points, num_points=1000):
 
     plt.show()
 
+def display_welcome_message():
+    print("================================================")
+    print("  Welcome to the Bézier Curve Animator ✨✨✨ ")
+    print("================================================")
+    print("\nThis program allows you to animate the formation of Bézier curves using the Brute Force method.")
+    print("\nPlease follow the prompts to input your control points.")
+    print("\nLet's get started!\n")
+
 def main():
+    display_welcome_message()
     # Take input from the user for the control points
     control_points = []
     n = int(input("Enter the number of control points: "))

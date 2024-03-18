@@ -30,7 +30,26 @@ then execute the command
 ```
 python main.py
 ```
-Follow the instructions in the program to enter control points and the number of iterations.
+After launching the program, you will be prompted to enter several inputs to configure the Bézier curve animation:
+### Input Fromat
+1. Control Points: First, you will be asked to enter the number of control points. A minimum of 2 control points are required to form a Bézier curve. For each control point, enter the x and y coordinates separated by a space.
+```bash
+Enter the number of control points: 3
+Enter the x and y coordinates of point 1: 0 0
+Enter the x and y coordinates of point 2: 1 2
+Enter the x and y coordinates of point 3: 2 0
+```
+2. Algorithm Selection: Next, select the algorithm to use for generating the Bézier curve.
+```bash
+Select the algorithm to use:
+1. Brute Force
+2. Divide and Conquer
+Enter the number of the algorithm: 2
+```
+3. If you choose Divide and Conquer, enter the number of iterations:
+```bash
+Enter the number of iterations: 3
+```
 
 ## Program Display
 ![](https://github.com/Tucil2_13522035_13522096/assets/format-masukan.gif)
