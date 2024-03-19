@@ -15,14 +15,11 @@ def bezier_curve_recursive(control_points, t):
 def plot_bezier_brute_force(control_points, iterations):
     """ Plots the Bezier curve for a given set of control points """
     start_time = time.time()
-    if(iterations == 0):
+
+    if (iterations == 0):
         num_points = iterations
         x_values, y_values = zip(*control_points)
         control_x, control_y = zip(*control_points)
-
-    elif(iterations < 0):
-        print("At least 0 iteration is required.")
-        return
     else:
         num_points = pow(2, iterations)+1 + pow(2, iterations-1)*(len(control_points)-3) 
         bezier_points = [bezier_curve_recursive(control_points, t/num_points) for t in range(num_points + 1)]

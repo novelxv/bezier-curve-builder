@@ -56,9 +56,11 @@ Enter the number of iterations: 3
 ## Program Display
 
 Bézier Curve with 3 Control Points and 3 iterations
+
 ![](assets/bezier-3.gif)
 
 Bézier Curve with 5 Control Points and 2 iterations
+
 ![](assets/bezier-5.gif)
 
 ## Author Information

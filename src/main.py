@@ -35,7 +35,12 @@ def main():
     if algorithm == 1:
         brute.plot_bezier_brute_force(control_points, iterations)
     elif algorithm == 2:
-        dac.plot_bezier_divide_and_conquer(control_points, iterations)
+        print("\nDo you want to animate the curve? (y/n)")
+        animate = input().lower()
+        if animate == 'y':
+            dac.plot_bezier_divide_and_conquer_animate(control_points, iterations)
+        else:
+            dac.plot_bezier_divide_and_conquer(control_points, iterations)
     else:
         print("Invalid input. Please enter 1 or 2.")
         return
