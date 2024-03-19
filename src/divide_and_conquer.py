@@ -65,7 +65,7 @@ def plot_bezier_divide_and_conquer(control_points, iteration):
 
     end_time = time.time()
     execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
-    print(f"Execution time: {execution_time:.2f} ms")
+    print(f"\nExecution time: {execution_time:.2f} ms")
     
     plt.show()
         
