@@ -51,8 +51,15 @@ Enter the number of the algorithm: 2
 Enter the number of iterations: 3
 ```
 
+![](assets/format-masukan.gif)
+
 ## Program Display
-![](https://github.com/Tucil2_13522035_13522096/assets/format-masukan.gif)
+
+Bézier Curve with 3 Control Points and 3 iterations
+![](assets/bezier-3.gif)
+
+Bézier Curve with 5 Control Points and 2 iterations
+![](assets/bezier-5.gif)
 
 ## Author Information
 | Name                    | NIM      |

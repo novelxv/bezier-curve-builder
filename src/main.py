@@ -35,8 +35,7 @@ def main():
     if algorithm == 1:
         brute.plot_bezier_brute_force(control_points, iterations)
     elif algorithm == 2:
-        all_points = [control_points]
-        dac.plot_bezier_divide_and_conquer(control_points, all_points, iterations)
+        dac.plot_bezier_divide_and_conquer(control_points, iterations)
     else:
         print("Invalid input. Please enter 1 or 2.")
         return
