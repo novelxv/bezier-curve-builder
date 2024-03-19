@@ -1,0 +1,4 @@
+number of control_points n
+number of iterations
+algorithm to use (1 = brute force, 2 = divide and conquer)
+coordinate of n control_points
