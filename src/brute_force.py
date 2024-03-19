@@ -15,17 +15,26 @@ def bezier_curve_recursive(control_points, t):
 def plot_bezier_brute_force(control_points, iterations):
     """ Plots the Bezier curve for a given set of control points """
     start_time = time.time()
-    num_points = pow(2, iterations)+1 + pow(2, iterations-1)*(len(control_points)-3) 
-    bezier_points = [bezier_curve_recursive(control_points, t/num_points) for t in range(num_points + 1)]
-    # Extract x and y coordinates from points
-    x_values, y_values = zip(*bezier_points)
-    control_x, control_y = zip(*control_points)
+    if(iterations == 0):
+        num_points = iterations
+        x_values, y_values = zip(*control_points)
+        control_x, control_y = zip(*control_points)
+
+    elif(iterations < 0):
+        print("At least 0 iteration is required.")
+        return
+    else:
+        num_points = pow(2, iterations)+1 + pow(2, iterations-1)*(len(control_points)-3) 
+        bezier_points = [bezier_curve_recursive(control_points, t/num_points) for t in range(num_points + 1)]
+        # Extract x and y coordinates from points
+        x_values, y_values = zip(*bezier_points)
+        control_x, control_y = zip(*control_points)
 
     plt.figure()
     plt.plot(x_values, y_values, 'b-', label='Bezier Curve')
-    plt.plot(control_x, control_y, 'ro--', label='Control Points', color='green')
+    plt.plot(control_x, control_y, 'ro--', label='Control Points')
     # bezier_x, bezier_y = zip(*bezier_points)
-    # plt.scatter(bezier_x, bezier_y, color='red', label='Bezier Points', s=0.5)
+    # plt.scatter(bezier_x, bezier_y, color='red', label='Bezier Points')
     plt.title('Bezier Curve with Brute Force Algorithm')
     plt.legend()
 
