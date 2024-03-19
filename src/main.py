@@ -55,6 +55,12 @@ def main():
         file_path = input("\nEnter the file path: ")
         file_path = "../test/" + file_path
         n, iterations, algorithm, control_points = read_input_from_txt(file_path)
+        if n < 2:
+            print("At least 2 control points are required to form a Bezier curve.")
+            return
+        if iterations < 0:
+            print("At least 0 iteration is required.")
+            return
     else:
         print("Invalid input. Please enter 1 or 2.")
         return
